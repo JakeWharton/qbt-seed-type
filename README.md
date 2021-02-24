@@ -1,7 +1,8 @@
 qBittorrent Seed Type Marker
 ============================
 
-Maintains either a "Solo-seed" or a "Cross-seed" tag on torrents.
+Maintains the "Solo-seed" or "Cross-seed" tag on each torrent. Cross-seeding is determined by a torrent
+having a single file which appears in another.
 
 This tool is provided as a Docker container which runs as a cron job.
 
