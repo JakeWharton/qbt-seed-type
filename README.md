@@ -1,5 +1,5 @@
-qBittorrent Seed Type Marker
-============================
+qBittorrent Seed Type
+=====================
 
 Maintains the "Solo-seed" or "Cross-seed" tag on each torrent. Cross-seeding is determined by a torrent
 having a single file which appears in another.
