@@ -60,7 +60,7 @@ services:
 
 If you have a non-default username or password, specify the `QBT_USER` and/or `QBT_PASS` environment variables, respectively.
 
-The container will check all of your torrents every hour by default.
+The container will check all of your torrents every 5 minutes by default.
 To change when it runs, specify the `CRON` environment variable with a valid cron specifier.
 For help creating a valid cron specifier, visit [cron.help][cron].
 

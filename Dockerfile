@@ -3,8 +3,8 @@ FROM oznu/s6-alpine:3.12
 ENV \
     # Fail if cont-init scripts exit with non-zero code.
     S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    # Run on the hour by default.
-    CRON="0 * * * *" \
+    # Run every 5m by default.
+    CRON="*/5 * * * *" \
     HEALTHCHECK_ID="" \
     HEALTHCHECK_HOST="https://hc-ping.com" \
     QBT_SOLO_TAG="Solo-seed" \
