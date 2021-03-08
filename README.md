@@ -44,7 +44,7 @@ Start this container and point it at your qBittorrent instance with the `QBT_HOS
 ```
 $ docker run -d \
     -e "QBT_HOST=http://qbittorrent:8080" \
-    jakewharton/qbt-seed-type:trunk
+    jakewharton/qbt-seed-type:1
 ```
 
 For Docker Compose, add it as an additional service:
@@ -52,7 +52,7 @@ For Docker Compose, add it as an additional service:
 services:
   qbt-seed-type:
     container_name: qbt-seed-type
-    image: jakewharton/qbt-seed-type:trunk
+    image: jakewharton/qbt-seed-type:1
     restart: unless-stopped
     environment:
       - "QBT_HOST=http://qbittorrent:8080"
