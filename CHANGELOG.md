@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+Changed
+
+- Default cron now runs every 5 minutes rather than every hour.
+
 
 ## [1.0.0] - 2021-02-23
 
