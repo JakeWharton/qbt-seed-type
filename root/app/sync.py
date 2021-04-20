@@ -20,7 +20,8 @@ if DEBUG:
 file_to_count = dict()
 for torrent in client.torrents.info():
 	for file in torrent.files:
-		file_to_count[file.name] = file_to_count.get(file.name, 0) + 1
+		file_path = torrent.save_path + file.name
+		file_to_count[file_path] = file_to_count.get(file.name, 0) + 1
 
 for torrent in client.torrents.info():
 	if DEBUG:
@@ -29,19 +30,21 @@ for torrent in client.torrents.info():
 
 	is_cross = False
 	for file in torrent.files:
+		file_path = torrent.save_path + file.name
+
 		if file.priority == 0:
 			if DEBUG:
-				print(file.name, "Ignored (priority == 0)")
+				print(file_path, "Ignored (priority == 0)")
 			continue  # This file is not set to download. Ignore.
 		if file.progress < 1:
 			if DEBUG:
-				print(file.name, "Ignored (progress < 1)")
+				print(file_path, "Ignored (progress < 1)")
 			continue  # This file is not completed and may not have been linked. Ignore.
 
-		torrent_reference_count = file_to_count[file.name]
+		torrent_reference_count = file_to_count[file_path]
 		file_cross_seeded = torrent_reference_count > 1
 		if DEBUG:
-			print(file.name, torrent_reference_count, file_cross_seeded)
+			print(file_path, torrent_reference_count, file_cross_seeded)
 		if file_cross_seeded:
 			is_cross = True
 			break
