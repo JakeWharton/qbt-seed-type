@@ -21,7 +21,7 @@ file_to_count = dict()
 for torrent in client.torrents.info():
 	for file in torrent.files:
 		file_path = torrent.save_path + file.name
-		file_to_count[file_path] = file_to_count.get(file.name, 0) + 1
+		file_to_count[file_path] = file_to_count.get(file_path, 0) + 1
 
 for torrent in client.torrents.info():
 	if DEBUG:
