@@ -1,7 +1,7 @@
 import os
 from qbittorrentapi import Client
 
-DEBUG = os.environ['DEBUG'] == 'true'
+DEBUG = os.environ.get('DEBUG') == 'true'
 
 SOLO_TAG = os.environ['QBT_SOLO_TAG']
 CROSS_TAG = os.environ['QBT_CROSS_TAG']
